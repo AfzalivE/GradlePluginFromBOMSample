@@ -2,16 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.sampleSqlDelight)
 }
 
 android {
     namespace = "com.afzaln.gradlepluginfrombom"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.afzaln.gradlepluginfrombom"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -57,3 +58,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.afzaln.gradlepluginfrombom")
+        }
+    }
+}
+

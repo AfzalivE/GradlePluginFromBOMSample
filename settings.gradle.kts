@@ -1,5 +1,9 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
+        mavenLocal {
+            url = uri("bom-repo")
+        }
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
